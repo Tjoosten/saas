@@ -1,10 +1,5 @@
 <?php
 
-Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
-    Route::get('/impersonate', 'ImpersonateController@index');
-    Route::post('/impersonate', 'ImpersonateController@start')->name('impersonate.start');
-});
-
 Route::delete('/admin/impersonate', 'Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');
 
 Route::group(['middleware' => ['auth', 'subscription.active']], function () {
