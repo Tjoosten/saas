@@ -1,7 +1,4 @@
 <?php
-
-Route::delete('/admin/impersonate', 'Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');
-
 Route::group(['middleware' => ['auth', 'subscription.active']], function () {
     Route::get('/dashboard', 'DashboardController@index');
 });
